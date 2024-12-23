@@ -53,10 +53,5 @@ if st.session_state['time_log']:
         file_name="time_log.csv",
         mime="text/csv"
     )
-
-    # Summary Visualization
-    st.subheader("Time Allocation Summary")
-    summary = df.groupby("Activity")["Time Spent (Minutes)"].sum().reset_index()
-    st.bar_chart(summary.set_index("Activity"))
 else:
     st.info("No activities logged yet. Use the form above to log your time.")
